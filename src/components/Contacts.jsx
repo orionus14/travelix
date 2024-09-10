@@ -18,7 +18,7 @@ const socialLinks = [
 
 const Contacts = () => {
     return (
-        <div className='flex justify-between bg-[#381857] text-white 
+        <div className='absolute z-10 w-full flex justify-between bg-[#381857] text-white 
         items-center h-8 px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]'>
             {/* Left Side */}
             <div className='flex items-center'>

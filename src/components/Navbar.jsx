@@ -7,8 +7,7 @@ import searchIcon from '../assets/search.svg'
 
 const Navbar = () => {
   return (
-    <div className='fixed w-full flex justify-between items-center h-20 bg-[#381857] bg-opacity-50 text-white
-    px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]'>
+    <div className='fixed z-10 top-8 w-full flex justify-between items-center h-20 bg-[#381857] bg-opacity-50 text-white px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]'>
       <div>
         <Link to={'/'} className='flex items-center'>
             <div className='mr-2'><img src={travelixLogo} alt="Travelix Logo" /></div>
