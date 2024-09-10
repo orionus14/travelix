@@ -10,10 +10,14 @@
     }
 
     .top-icon {
-        @apply h-5 w-5 mx-2 hover:brightness-75;
+        @apply h-5 w-5 mx-2 hover:brightness-75 transition;
     }
 
     .top-link-sign {
-        @apply hover:text-gray-200 mx-4 text-sm font-semibold;
+        @apply hover:text-gray-300 mx-4 text-sm font-semibold transition;
+    }
+
+    .navbar-item {
+        @apply mx-4 font-medium hover:text-gray-300 transition;
     }
 }
