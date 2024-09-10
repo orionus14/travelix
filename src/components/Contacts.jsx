@@ -18,10 +18,11 @@ const socialLinks = [
 
 const Contacts = () => {
     return (
-        <div className='flex justify-between px-60 bg-[#381857] text-white items-center h-8'>
+        <div className='flex justify-between bg-[#381857] text-white 
+        items-center h-8 px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]'>
             {/* Left Side */}
             <div className='flex items-center'>
-                <div className='mr-4'>+45 345 284 5689</div>
+                <div className='mr-8 text-sm font-medium'>+45 345 284 5689</div>
                 <div className='flex '>
                     {/* rel="noopener noreferrer" - запобігає доступу нової сторінки до вікна, яке її відкрило */}
                     {socialLinks.map((link, index) => (
@@ -35,9 +36,10 @@ const Contacts = () => {
             </div>
 
             {/* Right Side */}
-            <div className='flex'>
-                <div><Link to={'/login'}>Login</Link></div>
-                <div><Link to={'/register'}>Register</Link></div>
+            <div className='flex items-center'>
+                <div className='top-link-sign'><Link to={'/login'}>Login</Link></div>
+                <div className='w-[1px] h-4 bg-white'></div>
+                <div className='top-link-sign'><Link to={'/register'}>Register</Link></div>
             </div>
         </div>
     )
