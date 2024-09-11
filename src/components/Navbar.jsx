@@ -6,6 +6,7 @@ import travelixLogo from '../assets/logo.png'
 import searchIcon from '../assets/search.svg'
 import closeIcon from '../assets/close.svg'
 import burgerIcon from '../assets/burger-menu.svg'
+import { socialLinks } from '../assets/icons'
 
 const Navbar = () => {
     const [searchBar, setSearchBar] = useState(false);
@@ -19,14 +20,14 @@ const Navbar = () => {
     useEffect(() => {
         setBurgerMenu(false);
     }, [location])
-    
+
     useEffect(() => {
         setSearchBar(false);
     }, [burgerMenu])
 
     return (
 
-        <div className='flex fixed z-30 top-8 w-full justify-between items-center h-20 bg-[#381857] bg-opacity-50 text-white 2xl:px-28 xl:px-20 lg:px-16 px-12'>
+        <div className='flex fixed z-30 sm:top-8 w-full justify-between items-center h-20 bg-[#381857] bg-opacity-50 text-white 2xl:px-28 xl:px-20 lg:px-16 md:px-12 px-4'>
 
             <div className='flex items-center'>
                 {/* Burger menu */}
@@ -38,7 +39,7 @@ const Navbar = () => {
 
                             {/* Close Icon */}
                             <div className='absolute right-4 top-4'>
-                                <img className='w-5 h-5 cursor-pointer'
+                                <img className='w-6 h-6 cursor-pointer'
                                     src={closeIcon} alt="close icon"
                                     onClick={() => setBurgerMenu(false)} />
                             </div>
@@ -53,7 +54,27 @@ const Navbar = () => {
                                 <NavLink className='navbar-item-burger' to={'/news'}>News</NavLink>
                                 <NavLink className='navbar-item-burger' to={'/contact'}>Contact</NavLink>
                             </ul>
-                        </div> 
+
+                            <div className='px-4 mt-12'>
+                                <div className=' mb-2 text-lg font-medium'>+45 345 284 5689</div>
+                                <div className='flex '>
+                                    {/* rel="noopener noreferrer" - запобігає доступу нової сторінки до вікна, яке її відкрило */}
+                                    {socialLinks.map((link, index) => (
+                                        <div className='burger-icon' key={index}>
+                                            <a href={link.href} target="_blank" rel="noopener noreferrer">
+                                                <img src={link.src} alt={link.alt} />
+                                            </a>
+                                        </div>
+                                    ))}
+                                </div>
+
+                                <div className='flex sm:hidden items-center mt-12 justify-center'>
+                                    <div className='burger-link-sign'><Link to={'/login'}>Login</Link></div>
+                                    <div className='w-[1px] h-4 bg-white'></div>
+                                    <div className='burger-link-sign'><Link to={'/register'}>Register</Link></div>
+                                </div>
+                            </div>
+                        </div>
                         :
                         // Burger Icon
                         <img className='w-6 h-6 mr-8 cursor-pointer'
@@ -82,7 +103,7 @@ const Navbar = () => {
             <div className={`cursor-pointer mr-4 ${burgerMenu ? 'hidden sm:block' : ''}`} >
 
                 {!searchBar && (
-                    <img className={`h-5 w-5 transition-all duration-200 ${searchBar ? '' : 'animate-slidein'}`}
+                    <img className={`h-6 w-6 sm:h-5 sm:w-5 transition-all duration-200 ${searchBar ? '' : 'animate-slidein'}`}
                         onClick={() => setSearchBar(true)}
                         src={searchIcon} alt="search icon" />
                 )}
@@ -90,9 +111,11 @@ const Navbar = () => {
                 {searchBar && (
                     <div className={`flex items-center relative ${searchBar ? 'animate-slidein' : ''}`}>
                         <input className='block px-2 text-black absolute 
-                        lg:right-8 lg:top-0 md:top-14 md:right-0 right-8 top-0 w-40 border-none outline-none'
+                        lg:right-8 lg:top-0 md:top-14 md:right-0 
+                        sm:right-8 sm:top-0 right-0 top-14 
+                        w-40 border-none outline-none'
                             type="text" placeholder='Enter your text...' />
-                        <img className='block h-5 w-5'
+                        <img className='block h-6 w-6 sm:h-5 sm:w-5'
                             onClick={() => setSearchBar(false)}
                             src={closeIcon} alt="close icon"
                         />

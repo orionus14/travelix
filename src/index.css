@@ -12,14 +12,22 @@
     .top-icon {
         @apply h-5 w-5 mx-2 hover:brightness-75 transition;
     }
+    
+    .burger-icon {
+        @apply mr-4 h-8 w-8
+    }
 
     .top-link-sign {
         @apply hover:text-gray-300 mx-4 text-sm font-semibold transition;
     }
 
+    .burger-link-sign {
+        @apply hover:text-gray-300 mx-4 text-xl font-semibold transition;   
+    }
+
     .navbar-item,
     .navbar-item-burger {
-        @apply font-medium hover:text-gray-300 transition
+        @apply font-semibold hover:text-gray-300 transition
     }
 
     .navbar-item {
