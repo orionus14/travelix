@@ -17,7 +17,16 @@
         @apply hover:text-gray-300 mx-4 text-sm font-semibold transition;
     }
 
+    .navbar-item,
+    .navbar-item-burger {
+        @apply font-medium hover:text-gray-300 transition
+    }
+
     .navbar-item {
-        @apply mx-4 font-medium hover:text-gray-300 transition;
+        @apply mx-4;
+    }
+
+    .navbar-item-burger {
+        @apply my-4 p-1 border-b-2 border-[#fa9e1b];
     }
 }

@@ -18,8 +18,8 @@ const socialLinks = [
 
 const Contacts = () => {
     return (
-        <div className='absolute z-10 w-full flex justify-between bg-[#381857] text-white 
-        items-center h-8 px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]'>
+        <div className='absolute inset-0 z-30 w-full flex justify-between bg-[#381857] text-white 
+        items-center h-8 2xl:px-28 xl:px-20 lg:px-16 px-12'>
             {/* Left Side */}
             <div className='flex items-center'>
                 <div className='mr-8 text-sm font-medium'>+45 345 284 5689</div>
