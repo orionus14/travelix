@@ -8,10 +8,29 @@ import closeIcon from '../assets/close.svg'
 import burgerIcon from '../assets/burger-menu.svg'
 import { socialLinks } from '../assets/icons'
 
+const TOP_CONTACT_SIZE = 32;
+
 const Navbar = () => {
     const [searchBar, setSearchBar] = useState(false);
     const [burgerMenu, setBurgerMenu] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
     const location = useLocation();
+
+    useEffect(() => {
+        const handleScroll = () => {
+          if (window.scrollY > TOP_CONTACT_SIZE) {
+            setIsScrolled(true);
+          } else {
+            setIsScrolled(false);
+          }
+        };
+    
+        window.addEventListener('scroll', handleScroll);
+    
+        return () => {
+          window.removeEventListener('scroll', handleScroll);
+        };
+      }, []);
 
     useEffect(() => {
         setSearchBar(false);
@@ -34,8 +53,11 @@ const Navbar = () => {
     }, [burgerMenu])
 
     return (
-
-        <div className='flex fixed z-30 sm:top-8 w-full justify-between items-center h-20 bg-[#381857] bg-opacity-50 text-white 2xl:px-28 xl:px-20 lg:px-16 md:px-12 px-4'>
+        <div className={`flex fixed z-30 w-full justify-between items-center h-20 
+        bg-[#381857] bg-opacity-50 text-white 
+        2xl:px-28 xl:px-20 lg:px-16 md:px-12 px-4 
+        transition-all duration-300
+        ${isScrolled ? 'sm:top-0' : 'sm:top-8'}`}>
             {/*---------- Small Screen ---------- */}
 
             <div className='flex items-center'>
