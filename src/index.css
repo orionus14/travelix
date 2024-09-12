@@ -7,6 +7,7 @@
 @layer base {
     html {
         font-family: 'Poppins', Verdana, Geneva, Tahoma, sans-serif;
+        box-sizing: border-box;
     }
 
     .top-icon {
@@ -14,7 +15,7 @@
     }
     
     .burger-icon {
-        @apply mr-4 h-8 w-8
+        @apply mr-4 h-8 w-8 hover:brightness-75 transition;
     }
 
     .top-link-sign {
@@ -36,5 +37,9 @@
 
     .navbar-item-burger {
         @apply my-4 p-1 border-b-2 border-[#fa9e1b];
+    }
+
+    .activity:hover .activity-icon {
+        filter: brightness(0) invert(1);
     }
 }

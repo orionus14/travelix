@@ -22,12 +22,21 @@ const Navbar = () => {
     }, [location])
 
     useEffect(() => {
+        let path = location.pathname.replace(/[^a-zA-Z]/g, '');
+        if (location.pathname !== '/') {
+            document.title = "Travelix - " + path.charAt(0).toUpperCase()
+                + path.slice(1);
+        } else document.title = 'Travelix - Discover the World!'
+    }, [location])
+
+    useEffect(() => {
         setSearchBar(false);
     }, [burgerMenu])
 
     return (
 
         <div className='flex fixed z-30 sm:top-8 w-full justify-between items-center h-20 bg-[#381857] bg-opacity-50 text-white 2xl:px-28 xl:px-20 lg:px-16 md:px-12 px-4'>
+            {/*---------- Small Screen ---------- */}
 
             <div className='flex items-center'>
                 {/* Burger menu */}
@@ -82,6 +91,9 @@ const Navbar = () => {
                             onClick={() => setBurgerMenu(true)} />
                     }
                 </div>
+
+
+                {/*---------- Big Screen ---------- */}
 
                 {/* Logo */}
                 <Link to={'/'} className={`${burgerMenu ? 'hidden' : 'flex items-center'}`}>
