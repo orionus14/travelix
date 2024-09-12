@@ -4,12 +4,12 @@ import ActivityButton from './ActivityButton'
 import SearchInputSection from './SearchInputSection'
 
 const ChooseVacation = () => {
-    const [activeActivity, setActiveActivity] = useState([activities[0].activity]);
+    const [activeActivity, setActiveActivity] = useState(activities[0].activity);
 
   return (
     <div className='bg-white'>
       <nav>
-        <ul className='flex flex-row justify-center'>
+        <ul className='flex flex-col lg:flex-row justify-center'>
             {activities.map((act, index) => (
                 <li key={index}>
                     <ActivityButton 

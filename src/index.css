@@ -49,6 +49,6 @@
     }
 
     .input-field-title {
-        @apply text-white font-medium uppercase text-sm mb-2;
+        @apply text-white font-medium uppercase text-sm mb-2 lg:static absolute left-3 sm:left-8 md:left-20;
     }
 }
